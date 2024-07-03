@@ -30,13 +30,13 @@ def login(form: RequestUserSchema):
     return login_post(form)
 
 # Rota buscar Item GET
-get_bill_items_tag = Tag(name="Buscar items", description="Procuras os items agrupados por meses e anos.")
+get_bill_items_tag = Tag(name="Buscar items por usuário", description="Procuras os items do usuário agrupados por meses e anos.")
 @app.get('/bill_items', tags=[get_bill_items_tag], responses={"200": ResponseSuccessSchema, "400": ResponseErrorSchema})
 def get():
     return { "success": True }
 
 # Rota criação de Item POST
-post_register_tag = Tag(name="Criar Item", description="Cria item agrupada por mês e ano.")
+post_register_tag = Tag(name="Criar Item", description="Cria item agrupado por mês e ano.")
 @app.post('/bill_items', tags=[post_register_tag], responses={"200": ResponseSuccessSchema, "400": ResponseErrorSchema})
 def post():
     return { "success": True }
@@ -48,7 +48,7 @@ def put():
     return { "success": True }
 
 # Rota deletar item DELETE
-delete_bill_items_tag = Tag(name="Deletar conta", description="Deleta conta já criada.")
+delete_bill_items_tag = Tag(name="Deletar item", description="Deleta item já criado.")
 @app.delete('/bill_items', tags=[delete_bill_items_tag], responses={"200": ResponseSuccessSchema, "400": ResponseErrorSchema})
 def delete():
     return { "success": True }
