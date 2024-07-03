@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 class ResponseErrorSchema(BaseModel):
-    error: str = "Ocorreu um erro"
+    error: str = "Error"
 
 class ResponseSuccessSchema(BaseModel):
     success: bool = True

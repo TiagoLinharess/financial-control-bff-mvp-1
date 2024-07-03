@@ -9,7 +9,7 @@ class ResponseLoginSchema(BaseModel):
     session_id: str = "xxxxxx"
 
 class ResponseRegisterSchema(BaseModel):
-    message: str = "Usuário criado com o email a@a.com"
+    message: str = "success"
 
 def get_response_login_json(user_id: str, session_id: str):
     return { 
