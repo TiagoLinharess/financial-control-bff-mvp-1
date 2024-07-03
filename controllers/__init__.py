@@ -1,0 +1,1 @@
+from controllers.register_controller_post import register_post
