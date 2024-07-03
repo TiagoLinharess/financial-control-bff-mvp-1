@@ -1,11 +1,8 @@
-import requests
 from schemas import get_default_success_with_message, get_default_error, RequestUserSchema
+from utils import make_login_api_base_request
 
 # Rota de Registro de usuário POST
 def register_post(form: RequestUserSchema):
-
-    # Endpoint de registro da api de login
-    url = "http://localhost:3000/register"
 
     # Payload de registro da api de login
     payload = {
@@ -14,7 +11,7 @@ def register_post(form: RequestUserSchema):
     }
 
     # Request
-    response = requests.post(url, payload)
+    response = make_login_api_base_request("/register", payload)
 
     if response.status_code == 201:
 
@@ -25,3 +22,4 @@ def register_post(form: RequestUserSchema):
 
         # Retorno de erro da rota
         return get_default_error(data.get("error"))
+

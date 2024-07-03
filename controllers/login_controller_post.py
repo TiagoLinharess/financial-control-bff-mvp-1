@@ -1,21 +1,18 @@
 from flask import jsonify
-import requests
+from utils import make_login_api_base_request
 from schemas import get_response_login_json, get_default_error, RequestUserSchema
 
 # Rota de Login de usuário POST
 def login_post(form: RequestUserSchema):
 
-    # Endpoint de Login da api de login
-    url = "http://localhost:3000/login"
-
-    # Payload de Login da api de login
+    # Payload de registro da api de login
     payload = {
         "email": form.email,
         "password": form.password
     }
 
     # Request
-    response = requests.post(url, payload)
+    response = make_login_api_base_request("/login", payload)
 
     if response.status_code == 200:
         data = response.json()
