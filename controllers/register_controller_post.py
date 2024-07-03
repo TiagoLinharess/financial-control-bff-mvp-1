@@ -19,12 +19,9 @@ def register_post(form: RequestUserSchema):
     if response.status_code == 201:
 
         # Retorno de sucesso da rota
-        return get_default_success_with_message("Usuário criado com o email " + form.email + ".", 201)
-    elif response.status_code == 400:
-
-        # Retorno de erro da rota
-        return get_default_error("O email inserido ja está sendo usado.")
+        return get_default_success_with_message("success", 201)
     else:
+        data = response.json()
 
         # Retorno de erro da rota
-        return get_default_error("Não foi possível criar usuário.")
+        return get_default_error(data.get("error"))

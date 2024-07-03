@@ -22,11 +22,8 @@ def login_post(form: RequestUserSchema):
 
         # Retorno de sucesso da rota
         return get_response_login_json(data.get("id"), data.get("refresh_token"))
-    elif response.status_code == 400:
-
-        # Retorno de erro da rota
-        return get_default_error("Email ou senha incorretos.")
     else:
+        data = response.json()
 
         # Retorno de erro da rota
-        return get_default_error("Não foi possível efetuar o login.")
+        return get_default_error(data.get("error"))
