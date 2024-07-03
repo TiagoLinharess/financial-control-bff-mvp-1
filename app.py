@@ -2,7 +2,7 @@ from flask_openapi3 import OpenAPI, Info, Tag
 from flask_cors import CORS
 from flask import redirect
 
-from controllers import register_post
+from controllers import register_post, login_post
 
 from schemas import ResponseSuccessSchema, ResponseErrorSchema, ResponseLoginSchema, ResponseRegisterSchema, RequestUserSchema
 
@@ -27,7 +27,7 @@ def register(form: RequestUserSchema):
 post_register_tag = Tag(name="Login usuário", description="Efetua login do usuário com email e senha.")
 @app.post('/login', tags=[post_register_tag], responses={"200": ResponseLoginSchema, "400": ResponseErrorSchema})
 def login(form: RequestUserSchema):
-    return { "success": True }
+    return login_post(form)
 
 # Rota buscar Item GET
 get_bill_items_tag = Tag(name="Buscar items", description="Procuras os items agrupados por meses e anos.")
