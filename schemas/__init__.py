@@ -1,2 +1,2 @@
-from schemas.response import ResponseSuccessSchema, ResponseErrorSchema, get_default_error, get_default_success
+from schemas.response import ResponseSuccessSchema, ResponseErrorSchema, get_default_error, get_default_success, get_default_success_with_message
 from schemas.login import ResponseLoginSchema, ResponseRegisterSchema, RequestUserSchema

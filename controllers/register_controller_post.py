@@ -1,5 +1,5 @@
 import requests
-from schemas import get_default_success, get_default_error, RequestUserSchema
+from schemas import get_default_success_with_message, get_default_error, RequestUserSchema
 
 # Rota de Registro de usuário POST
 def register_post(form: RequestUserSchema):
@@ -19,7 +19,7 @@ def register_post(form: RequestUserSchema):
     if response.status_code == 201:
 
         # Retorno de sucesso da rota
-        return get_default_success()
+        return get_default_success_with_message("Usuário criado com o email " + form.email, 201)
     elif response.status_code == 400:
 
         # Retorno de erro da rota
