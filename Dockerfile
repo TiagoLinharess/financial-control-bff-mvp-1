@@ -16,8 +16,5 @@ COPY . .
 # Exponha a porta que a aplicação irá rodar
 EXPOSE 5000
 
-# Define as variáveis de ambiente
-ENV API_LOGIN_URL=http://financial-control-login-mvp-1
-
 # Define o comando de execução da API
 CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5000"]
