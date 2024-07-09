@@ -1,5 +1,5 @@
 from flask import jsonify
-from utils import make_login_api_base_request
+from utils import make_login_api_request
 from schemas import get_response_login_json, get_default_error, RequestUserSchema
 
 # Rota de Login de usuário POST
@@ -12,7 +12,7 @@ def login_post(form: RequestUserSchema):
     }
 
     # Request
-    response = make_login_api_base_request("/login", payload)
+    response = make_login_api_request("/login", payload)
 
     if response.status_code == 200:
         data = response.json()

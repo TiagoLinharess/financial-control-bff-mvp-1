@@ -1,4 +1,32 @@
 from pydantic import BaseModel
+from typing import List
+
+# Eschemas
+class ResponseIncomeSchema(BaseModel):
+    id: int = 1
+    name: str = "Bill"
+    type: str = "income"
+    value: float = 100
+
+class ResponseOutcomeSchema(BaseModel):
+    id: int = 2
+    name: str = "Bill"
+    type: str = "saída"
+    value: float = 100
+
+class ResponseMonthSchema(BaseModel):
+    id: int = 1
+    month: str = "april"
+    incomes: List[ResponseIncomeSchema]
+    outcomes: List[ResponseOutcomeSchema]
+
+class ResponseYearSchema(BaseModel):
+    year: str = "2024"
+    id: int = 1
+    months: List[ResponseMonthSchema]
+
+class ResponseYearsListSchema(BaseModel):
+    years: List[ResponseYearSchema]
 
 class ResponseErrorSchema(BaseModel):
     error: str = "Error"

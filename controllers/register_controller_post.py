@@ -1,5 +1,5 @@
 from schemas import get_default_success_with_message, get_default_error, RequestUserSchema
-from utils import make_login_api_base_request
+from utils import make_login_api_request
 
 # Rota de Registro de usuário POST
 def register_post(form: RequestUserSchema):
@@ -11,7 +11,7 @@ def register_post(form: RequestUserSchema):
     }
 
     # Request
-    response = make_login_api_base_request("/register", payload)
+    response = make_login_api_request("/register", payload)
 
     if response.status_code == 201:
 
