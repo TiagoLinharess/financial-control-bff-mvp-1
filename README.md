@@ -19,6 +19,8 @@ O objetivo do projeto é um "backend for front end" responsável por organizar t
 ---
 ## Como executar
 
+Para entender como funciona o BFF do financial control, primeiro deve-se entender que o projeto não roda como uma api sozinha, ele precisa das apis de [login](https://github.com/TiagoLinharess/financial-control-login-mvp-1) e [repositório](https://github.com/TiagoLinharess/financial-control-api-mvp-2) nas portas 3000 e 5002 respectivamente, instaladas e rodando.
+
 Será necessário ter todas as libs python listadas no `requirements.txt` instaladas, é bem simples o processo.
 
 Após clonar o repositório, é necessário ir ao diretório raiz do projeto, pelo terminal, para poder executar os comandos descritos abaixo.
