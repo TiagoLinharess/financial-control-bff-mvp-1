@@ -17,9 +17,15 @@ O objetivo do projeto é um "backend for front end" responsável por organizar t
 **DELETE BILL ITEMS**: Uma rota para deletar a conta do mês e ano do usuário.
 
 ---
-## Como executar
+## Antes de Executar
 
-Para entender como funciona o BFF do financial control, primeiro deve-se entender que o projeto não roda como uma api sozinha, ele precisa das apis de [login](https://github.com/TiagoLinharess/financial-control-login-mvp-1) e [repositório](https://github.com/TiagoLinharess/financial-control-api-mvp-2) nas portas 3000 e 5002 respectivamente, instaladas e rodando.
+Para entender como funciona o BFF do financial control, primeiro deve-se entender que o projeto não roda como uma api sozinha, ele precisa das apis de [login](https://github.com/TiagoLinharess/financial-control-login-mvp-1) e [repositório](https://github.com/TiagoLinharess/financial-control-api-mvp-2) nas portas 3000 e 5002 respectivamente, instaladas e rodando, seguindo o fluxograma abaixo.
+
+**OBS:** Todos os requests na api do financial control passam por uma rota não exposta no bff para verificação de sessão na api de login.
+
+![Fluxograma](./fluxograma.png)
+
+## Como Executar
 
 Será necessário ter todas as libs python listadas no `requirements.txt` instaladas, é bem simples o processo.
 
